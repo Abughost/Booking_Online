@@ -93,7 +93,7 @@ celerybeat.pid
 .venv
 env/**
 !env/.env.example
-**migrations**
+apps/migrations/**
 !apps/migrations/__init__.py
 venv/
 ENV/

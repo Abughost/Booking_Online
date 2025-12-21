@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 
-from apps.views import MasterListApiView, telegram_webhook
+from apps.views import MasterListApiView
 
 urlpatterns = [
     path('masters', MasterListApiView.as_view()),
