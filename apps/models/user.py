@@ -14,6 +14,7 @@ class User(AbstractUser ,CustomCreatedBaseModel):
     phone = CharField(max_length=15, unique=True)
     role = CharField(max_length=10, choices=RoleType, default=RoleType.client)
 
+    password = None
     email = None
     USERNAME_FIELD = 'phone'
     REQUIRED_FIELDS = []
