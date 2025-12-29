@@ -1,6 +1,6 @@
 from django.urls import path
 
-from bot.view import webhook, health_check
+from bot.view import health_check, webhook
 
 urlpatterns=[
     path('webhook/', webhook, name='webhook'),

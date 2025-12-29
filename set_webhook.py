@@ -6,6 +6,7 @@ import django
 from bot.config import bot
 from root.settings import NGROK_URL
 
+
 def set_webhook():
     bot.remove_webhook()
     webhook_ulr = f"{NGROK_URL}/bot/webhook"

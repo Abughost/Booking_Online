@@ -2,7 +2,7 @@ import json
 import logging
 
 from aiogram.types import Update
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from twisted.python.log import logerr
