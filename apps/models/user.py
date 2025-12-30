@@ -13,6 +13,7 @@ class User(AbstractUser ,CustomCreatedBaseModel):
 
     phone = CharField(max_length=15, unique=True)
     role = CharField(max_length=10, choices=RoleType, default=RoleType.client)
+    username = CharField(max_length=255, blank=True, null=True)
 
     password = None
     email = None

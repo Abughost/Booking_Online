@@ -29,11 +29,16 @@ INSTALLED_APPS = [
 
     #third part apps
     'drf_spectacular',
+    'rest_framework_simplejwt'
 ]
 
 
 REST_FRAMEWORK = {
+    'TIME_FORMAT': '%H:%M',
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 SPECTACULAR_SETTINGS = {
@@ -84,6 +89,17 @@ DATABASES = {
         'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': os.getenv('POSTGRES_PORT'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD')
+    }
+}
+
+REDIS_HOST=os.getenv('REDIS_HOST')
+REDIS_PORT=os.getenv('REDIS_PORT')
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}',
+        # 'KEY_PREFIX': 'django'
     }
 }
 
