@@ -4,11 +4,7 @@ from rest_framework.views import APIView
 
 from apps.seralizers import SendCodeSerializer
 from apps.seralizers.auth import VerifyCodeSerializer
-from apps.utils import send_code, check_code
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
+from apps.utils import check_code, send_code
 
 
 class SendCodeApiView(APIView):

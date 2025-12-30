@@ -1,13 +1,12 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from apps.views.auth import SendCodeApiView, VerifyCodeApiView
-from apps.views.views import (AppointmentModelViewSet, BusinessListCreateAPIView,
+from apps.views import (AppointmentModelViewSet, BusinessListCreateAPIView,
                         ClientListCreateAPIView,
                         ClientRetrieveUpdateDestroyAPIView,
                         MasterListCreateAPIView,
-                        MasterRetrieveUpdateDestroyAPIView,
-                        ServiceModelViewSet)
+                        MasterRetrieveUpdateDestroyAPIView, SendCodeApiView,
+                        ServiceModelViewSet, VerifyCodeApiView)
 
 router = DefaultRouter()
 router.register('appointment', AppointmentModelViewSet)

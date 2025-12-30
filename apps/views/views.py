@@ -1,14 +1,12 @@
-from aiohttp.web_fileresponse import extension
 from drf_spectacular.utils import extend_schema
 from rest_framework.generics import (ListCreateAPIView,
                                      RetrieveUpdateDestroyAPIView)
 from rest_framework.viewsets import ModelViewSet
 
-from apps.models import Business, Service, User
-from apps.models.business import Appointment
-from apps.seralizers.free import (AppointmentModelSerializer,
-                                  BusinessModelSerializer,
-                                  ServiceModelSerializer, UserModelSerializer)
+from apps.models import Appointment, Business, Service, User
+from apps.seralizers import (AppointmentModelSerializer,
+                             BusinessModelSerializer, ServiceModelSerializer,
+                             UserModelSerializer)
 
 
 class MasterListCreateAPIView(ListCreateAPIView):
