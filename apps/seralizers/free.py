@@ -1,4 +1,5 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.fields import CharField
+from rest_framework.serializers import ModelSerializer, Serializer
 
 from apps.models import Appointment, Business, Service, User
 from apps.utils import normalize_phone
@@ -16,6 +17,14 @@ class UserModelSerializer(ModelSerializer):
             defaults=validated_data)
 
         return user
+
+class ChangeUserRoleSerializer(Serializer):
+    role = CharField(max_length=15)
+
+    def update(self, instance, validated_data):
+        instance.role = validated_data.get('role',instance.role)
+        instance.save()
+        return instance
 
 class ServiceModelSerializer(ModelSerializer):
     class Meta:

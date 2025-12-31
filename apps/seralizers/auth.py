@@ -1,5 +1,3 @@
-from multiprocessing.managers import Token
-
 from rest_framework.fields import CharField, IntegerField
 from rest_framework.serializers import Serializer
 from rest_framework_simplejwt.tokens import RefreshToken
